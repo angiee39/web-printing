@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="dropbox" class="dropbox">
+    <div>Drop Box</div>
+    <div>--------------</div>
+    <div>--------------</div>
+    <div>--------------</div>
+    <div>--------------</div>
+    <button id="next1">Next</button>
+  </div>
+  <div id="options" class="options hide">
+    <form action="">
+      <div class="form-check">
+        <div>
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="method" id="" value="pickup">
+            Store pickup
+          </label>
+        </div>
+        <div>
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="method" id="" value="deliver">
+            Deliver
+          </label>
+        </div>
+        <div>
+          <div class="shipping">
+            <label class="form-check-label">
+              Name
+              <input type="text" class="form-check-input" name="method" id="" value="">
+            </label>
+        </div>
+        <div>
+          <label class="form-check-label">
+            Address
+            <input type="text" class="form-check-input" name="method" id="" value="">
+          </label>
+        </div>
+        <div>
+          <label class="form-check-label">
+            Contact
+            <input type="text" class="form-check-input" name="method" id="" value="">
+          </label>
+        </div>
+          <label class="form-check-label">
+            City
+            <select id="cars" name="cars">
+              <option value="volvo">Maharagama</option>
+              <option value="saab">Borelasgamuwa</option>
+              <option value="fiat">Nugegoda</option>
+              <option value="audi">Borella</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <button id="back2">Back</button>
+      <button id="next2">Next</button>
+    </form>
+
+  </div>
+  <div id="delivery" class="delivery hide">
+    <div><span>Cost</span><span>Rs.100</span></div>
+    <div><span>Delivery</span><span>Rs.100</span></div>
+    <div><span>Total</span><span>Rs.200</span></div>
+    <button id="back3">Back</button>
+    <button id="next3">Next</button>
+
+  </div>
+  <div id="payment" class="payment hide">Payment gateway<button id="next4">Next</button></div>
+  <div id="success" class="success hide">Success</div>
+  <script src="scripts.js"></script>
+</body>
+</html>

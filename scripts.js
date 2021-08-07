@@ -94,6 +94,17 @@ const next2 = document.getElementById("next2")
 next2.addEventListener('click', (e) => {
   e.preventDefault()
 
+  if (document.querySelector('input[name="delivery-method"]:checked').value === "pickup") {
+    if (document.getElementById('uname').value === '' || document.getElementById('contact').value === '') {
+      return alert('fields cannot be empty')
+    }
+  } else {
+    if (document.getElementById('uname').value === '' || document.getElementById('address').value === ''
+    || document.getElementById('contact').value === '' || document.getElementById('city').value === '') {
+      return alert('fields cannot be empty')
+    }
+  }
+
   customerInfo.deliver = document.querySelector('input[name="delivery-method"]:checked').value === "deliver" ? true : false 
   customerInfo.uname = document.getElementById('uname') ? document.getElementById('uname').value : ''
   customerInfo.address = document.getElementById('address') ? document.getElementById('address').value : ''
@@ -103,6 +114,7 @@ next2.addEventListener('click', (e) => {
   document.getElementById('options').classList.add('hide')
   document.getElementById('cost-page').classList.remove('hide')
 
+  document.getElementById('customer-name').innerText = customerInfo.uname
   document.getElementById('item-cost').textContent = `Rs.${itemCost}`
   if (customerInfo.deliver === false) {
     document.getElementById('delivery-cost').textContent = "none"

@@ -5,29 +5,34 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>Document</title>
+  <title>Web Printing</title>
 </head>
 <body>
+
+  <!-- PAGE 1 - Print List -->
   <div id="dropbox" class="dropbox">
     <div>Drop Box</div>
-    <div>--------------</div>
-    <div>--------------</div>
-    <div>--------------</div>
-    <div>--------------</div>
-    <button id="next1">Next</button>
+    <div id="list"></div>
+    <input type="file" multiple/>
+    <div>
+      <button id="addfile">Add</button>
+      <button id="next1">Next</button>
+    </div>
   </div>
-  <div id="options" class="options hide">
+
+  <!-- PAGE 2 - Delivery Info-->
+  <div id="options" class="hide">
     <form action="">
       <div class="form-check">
         <div>
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="method" id="" value="pickup">
-            Store pickup
+            <input type="radio" class="form-check-input" name="delivery-method" id="pickup" value="pickup" checked="true">
+            Pickup
           </label>
         </div>
         <div>
           <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="method" id="" value="deliver">
+            <input type="radio" class="form-check-input" name="delivery-method" id="deliver" value="deliver">
             Deliver
           </label>
         </div>
@@ -35,47 +40,59 @@
           <div class="shipping">
             <label class="form-check-label">
               Name
-              <input type="text" class="form-check-input" name="method" id="" value="">
+              <input type="text" class="form-check-input" name="uname" id="uname" autocomplete="off">
             </label>
         </div>
         <div>
           <label class="form-check-label">
-            Address
-            <input type="text" class="form-check-input" name="method" id="" value="">
-          </label>
-        </div>
-        <div>
-          <label class="form-check-label">
             Contact
-            <input type="text" class="form-check-input" name="method" id="" value="">
+            <input type="text" class="form-check-input" name="contact" id="contact" value="" autocomplete="off">
           </label>
         </div>
+        <div id="address-field">
+          <label class="form-check-label">
+            Address
+            <input type="text" class="form-check-input" name="address" id="address" value="" disabled autocomplete="off">
+          </label>
+        </div>
+        <div id="city-field" >
           <label class="form-check-label">
             City
-            <select id="cars" name="cars">
-              <option value="volvo">Maharagama</option>
-              <option value="saab">Borelasgamuwa</option>
-              <option value="fiat">Nugegoda</option>
-              <option value="audi">Borella</option>
+            <select id="city" name="cars"  disabled>
+              <option value="" selected disabled >City</option>
+              <option value="borelasgamuwa">Borelasgamuwa</option>
+              <option value="nugegoda">Nugegoda</option>
+              <option value="borella">Borella</option>
             </select>
           </label>
         </div>
+        <button id="back2">Back</button>
+        <button id="next2">Next</button>
       </div>
-      <button id="back2">Back</button>
-      <button id="next2">Next</button>
     </form>
-
+    </div>
   </div>
-  <div id="delivery" class="delivery hide">
-    <div><span>Cost</span><span>Rs.100</span></div>
-    <div><span>Delivery</span><span>Rs.100</span></div>
-    <div><span>Total</span><span>Rs.200</span></div>
+
+  <!-- PAGE 3 - Cost -->
+  <div id="cost-page" class="hide">
+    <div><span>Customer: </span><span id="customer-name"></span></div>
+    <div><span>Cost: </span><span id="item-cost"></span></div>
+    <div><span>Delivery: </span><span id="delivery-cost"></span></div>
+    <div><span>Total: </span><span id="total-cost"></span></div>
     <button id="back3">Back</button>
     <button id="next3">Next</button>
-
   </div>
-  <div id="payment" class="payment hide">Payment gateway<button id="next4">Next</button></div>
-  <div id="success" class="success hide">Success</div>
+  
+  <!-- PAGE 4 - Payment Gateway -->
+  <div id="payment" class="hide">
+    <div>Payment gateway</div>
+    <button id="back4">Back</button>
+    <button id="next4">Next</button>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div id="success" class="hide">Success</div>
+
   <script src="scripts.js"></script>
 </body>
 </html>
